@@ -12,6 +12,14 @@ Converts a file in MAF format (e.g., from TCGA mutation calling) into the [http:
 Compatible with Python 2 and 3; no external dependencies.
 
 
+liftover_annovar.py
+-------------------
+
+Converts the genomic coordinates in an Annovar input file over to a new reference genome using the [https://genome.ucsc.edu/cgi-bin/hgLiftOver](UCSC liftOver) commandline tool.
+
+Compatible with Python 2 and 3; depends on the [http://pandas.pydata.org/](pandas) library.
+
+
 fix_tophat_unmapped_reads.py
 ----------------------------
 

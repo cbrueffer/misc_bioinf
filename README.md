@@ -3,6 +3,15 @@ misc_bioinf
 
 Repository for miscellaneous bioinformatics scripts that may be useful to others.
 
+
+maf2annovar.py
+--------------
+
+Converts a file in MAF format (e.g., from TCGA mutation calling) into the [http://annovar.openbioinformatics.org](Annovar) input format.
+
+Compatible with Python 2 and 3; no external dependencies.
+
+
 fix_tophat_unmapped_reads.py
 ----------------------------
 

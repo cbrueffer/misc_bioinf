@@ -120,19 +120,19 @@ if __name__ == "__main__":
     import sys
 
     parser = argparse.ArgumentParser(description='Lift over a file in Annovar'
-                                     'format to a new reference genome.  Extra columns are preserved.')
+                                     ' format to a new reference genome.  Extra columns are preserved.')
     parser.add_argument("-d", "--debug", action='store_true',
                         help="enable debug mode")
     parser.add_argument("-v", "--version", action="version", version="%(prog)s 0.1")
     parser.add_argument("-c", "--chainfile", required=True,
                         help="liftOver chain file (available from UCSC)")
     parser.add_argument("-i", "--infile", required=True,
-                        help="File in Annovar input format (chromosome, start,"
-                        "end, ref_allele, var_allele, ...)")
+                        help="file in Annovar input format (chromosome, start,"
+                        " end, ref_allele, var_allele, ...)")
     parser.add_argument("-l", "--liftover", default="liftOver",
                         help="path to the liftOver binary (default: system PATH)")
     parser.add_argument("-w", "--workdir", default=None,
-                        help="Work directory (default: directory containing INFILE)")
+                        help="work directory (default: directory containing INFILE)")
     args = parser.parse_args()
     #args = parser.parse_args('-d --chainfile hg19ToHg38.over.chain --infile test_liftover.txt'.split())
 

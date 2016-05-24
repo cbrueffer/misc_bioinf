@@ -44,8 +44,8 @@ def liftover_annovar(annovarfile, chainfile, workdir=None, liftover='liftOver',
     """Convert the genomic coordinates in an Annovar-compatible file to
     a new reference genome using UCSC liftOver.
     """
-    if not workdir:
-        workdir = os.path.dirname(annovarfile)
+    if workdir is None:
+        workdir = os.path.abspath(os.path.dirname(annovarfile))
 
     print("Using workdir:", workdir)
 
@@ -134,7 +134,6 @@ if __name__ == "__main__":
     parser.add_argument("-w", "--workdir", default=None,
                         help="work directory (default: directory containing INFILE)")
     args = parser.parse_args()
-    #args = parser.parse_args('-d --chainfile hg19ToHg38.over.chain --infile test_liftover.txt'.split())
 
     for f in [args.infile, args.chainfile]:
         if not os.path.exists(f) or not os.path.isfile(f):

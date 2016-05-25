@@ -28,7 +28,8 @@ def exec_cmd(command, log=True):
     try:
         s = subprocess.Popen(command,
                              stdout=subprocess.PIPE,
-                             stderr=subprocess.STDOUT)
+                             stderr=subprocess.STDOUT,
+                             universal_newlines=True)
         while True:
             line = s.stdout.readline()
             if not line:
@@ -80,7 +81,7 @@ def liftover_annovar(annovarfile, chainfile, workdir=None, liftover='liftOver',
         with open(liftover_failed_file) as infile:
             liftover_failed = infile.read().splitlines()
             # remove comments
-            liftover_failed = [s for s in liftover_failed if s.startswith("#")]
+            liftover_failed = [s for s in liftover_failed if not s.startswith("#")]
     except:
         raise
 

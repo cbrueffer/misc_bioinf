@@ -100,11 +100,11 @@ def liftover_annovar(annovarfile, chainfile, workdir=None, liftover='liftOver',
 
     # update genomic location in the output frame and write it
     df_out_lifted[[COL_CHROM, COL_START, COL_END]] = liftover_ok_df
-    df_out_lifted.to_csv(outfile_lifted, sep="\t", index=False, header=False)
+    df_out_lifted.to_csv(outfile_lifted, sep=sep, index=False, header=False)
 
     # write the input lines that failed to lift over
     df_out_failed = df_in[df_in[col_position].isin(liftover_failed)]
-    df_out_failed.to_csv(outfile_failed, sep="\t", index=False, header=False)
+    df_out_failed.to_csv(outfile_failed, sep=sep, index=False, header=False)
 
     print()
     print('Locations in input file:  ', len(df_in.index))

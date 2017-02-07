@@ -31,7 +31,7 @@ Converts the genomic coordinates in an Annovar input file over to a new referenc
 
 Compatible with Python 2 and 3; depends on the [pandas](http://pandas.pydata.org/) library.
 
-This script required a liftOver file in [chain format](https://genome.ucsc.edu/goldenpath/help/chain.html) that maps coordinates between the old and new reference genome.  Chain files for many genomes are available from [UCSC](http://hgdownload.cse.ucsc.edu/downloads.html).
+This script requires a liftOver file in [chain format](https://genome.ucsc.edu/goldenpath/help/chain.html) that maps coordinates between the old and new reference genome.  Chain files for many genomes are available from [UCSC](http://hgdownload.cse.ucsc.edu/downloads.html).
 
 ```
 usage: liftover_annovar.py [-h] [-d] [-v] -c CHAINFILE -i INFILE [-l LIFTOVER]
